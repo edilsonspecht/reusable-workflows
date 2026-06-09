@@ -1,4 +1,4 @@
-name: Raw Security Scan
+name: Security Scan
 
 on:
   workflow_call:
