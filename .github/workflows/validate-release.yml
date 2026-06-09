@@ -3,6 +3,15 @@ name: Validate Release
 on:
   workflow_call:
 
+    inputs:
+
+      environment:
+        required: true
+        type: string
+
+      application:
+        required: true
+        type: string
 jobs:
 
   validate-config:
@@ -11,6 +20,11 @@ jobs:
 
     steps:
 
+      - name: Mostrar parametros
+        run: |
+          echo "Ambiente: ${{ inputs.environment }}"
+          echo "Aplicacao: ${{ inputs.application }}"
+    
       - name: Validar Configuracao
         run: |
           echo "Validando release"
