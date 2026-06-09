@@ -1,4 +1,4 @@
-name: Raw Validate Release
+name: Validate Release
 
 on:
   workflow_call:
