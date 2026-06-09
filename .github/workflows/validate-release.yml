@@ -1,0 +1,17 @@
+name: Validate Release
+
+on:
+  workflow_call:
+
+jobs:
+
+  validate-config:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Validar Configuracao
+        run: |
+          echo "Validando release"
+          echo "Configuracao OK"

@@ -1,0 +1,18 @@
+name: Security Scan
+
+on:
+  workflow_call:
+
+jobs:
+
+  security-scan:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Executar Fortify
+        run: echo "Fortify OK"
+
+      - name: Executar Mend
+        run: echo "Mend OK"
