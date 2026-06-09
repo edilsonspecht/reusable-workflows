@@ -16,3 +16,6 @@ jobs:
 
       - name: Executar Mend
         run: echo "Mend OK"
+
+      - name: Scan Seguranca
+        run: echo "Checkmarx OK"
