@@ -3,6 +3,19 @@ name: Security Scan
 on:
   workflow_call:
 
+    inputs:
+
+      fortify-enabled:
+        required: true
+        type: boolean
+
+      checkmarx-enabled:
+        required: true
+        type: boolean
+
+      mend-enabled:
+        required: true
+        type: boolean
 jobs:
 
   security-scan:
@@ -12,10 +25,19 @@ jobs:
     steps:
 
       - name: Executar Fortify
-        run: echo "Fortify OK"
+        if: inputs.fortify-enabled
+        run: |
+          echo "Executando Fortify"
+          echo "Fortify OK"
 
       - name: Executar Mend
-        run: echo "Mend OK"
+        if: inputs.mend-enabled
+        run: |
+          echo "Executando Mend"
+          echo "Mend OK"
 
-      - name: Scan Seguranca
-        run: echo "Checkmarx OK"
+      - name: Executar Checkmarx
+        if: inputs.checkmarx-enabled
+        run: |
+          echo "Executando Checkmarx"
+          echo "Checkmarx OK"
