@@ -11,5 +11,24 @@ jobs:
 
     steps:
 
-      - name: Build Android
-        run: echo "APK Gerado"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+
+      - name: Permissao Gradle
+        run: chmod +x gradlew
+
+      - name: Build APK Debug
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
