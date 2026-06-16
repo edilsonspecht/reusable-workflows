@@ -1,0 +1,14 @@
+name: Release PROD
+
+on:
+  workflow_call:
+
+jobs:
+
+  deploy-prod:
+
+    runs-on: ubuntu-latest
+    environment: PROD
+
+    steps:
+      - run: echo "Deploy PROD realizado"
