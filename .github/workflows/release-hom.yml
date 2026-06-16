@@ -1,0 +1,14 @@
+name: Release HOM
+
+on:
+  workflow_call:
+
+jobs:
+
+  deploy-hom:
+
+    runs-on: ubuntu-latest
+    environment: HOM
+
+    steps:
+      - run: echo "Deploy HOM realizado"
